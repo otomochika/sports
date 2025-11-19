@@ -58,7 +58,7 @@ group :test do
   gem "selenium-webdriver"
 end
 gem 'devise'
-gem 'simple_calendar', '~> 2.0'
+gem 'simple_calendar', '~> 3.1'
 gem "sassc-rails"
 
 # PostgreSQL → 本番用
