@@ -3,11 +3,11 @@ class TweetsController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create]
 
 def index
-    @tweets = Tweet.all
+    
     if params[:search] != nil && params[:search] != ''
         #部分検索かつ複数検索
         search = params[:search]
-        @tweets = Tweet.joins(:user).where("name LIKE ? OR menue LIKE ?", "%#{search}%", "%#{search}%")
+        @tweets = Tweet.joins(:user).where("tweet_name LIKE ? OR menue LIKE ?", "%#{search}%", "%#{search}%")
       else
         @tweets = Tweet.all
       end
@@ -36,7 +36,7 @@ end
 
   private
   def tweet_params
-    params.require(:tweet).permit(:name, :menue, :detail)
+    params.require(:tweet).permit(:tweet_name, :menue, :detail)
   end
 
 

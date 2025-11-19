@@ -13,7 +13,7 @@
   <% @tweets.each do |t| %>
 
     <div class="tweet">
-    <p><%= t.name %></p>
+      <p><%= t.tweet_name %></p>
       <p><%= t.menue %></p>
       <p><%= t.detail %></p>
       <!-- 投稿者情報 -->
@@ -21,12 +21,10 @@
       <p><%= t.user.email %></p>
       <%= button_to "削除する", tweet_path(t.id), method: :delete %> 
 
-      <!-- 投稿内容 -->
-      <p><%= t.name %></p>
-      <p><%= t.menue %></p>
-      <p><%= t.detail %></p>
+     
+      
 
-      <!-- 画像がある場合のみ表示 -->
+    
       <% if t.user.image.attached? %>
         <%= image_tag t.user.image, size: '250x200' %>
       <% end %>
@@ -38,3 +36,5 @@
 <% if user_signed_in? %>
   <%= link_to "マイページへ", user_path(current_user.id) %>
 <% end %>
+
+<%= link_to "カレンダーへ", blogs_path %>

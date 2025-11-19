@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_15_090744) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_19_131725) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_15_090744) do
   end
 
   create_table "tweets", force: :cascade do |t|
-    t.string "name"
+    t.string "tweet_name"
     t.text "menue"
     t.text "detail"
     t.datetime "created_at", null: false
