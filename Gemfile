@@ -59,7 +59,6 @@ group :test do
 end
 gem 'devise'
 gem 'simple_calendar', '~> 2.0'
-gem "sprockets-rails"
 gem "sassc-rails"
 
 # PostgreSQL → 本番用
