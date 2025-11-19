@@ -1,0 +1,28 @@
+<h1>投稿</h1>
+<h3>新規投稿ページ</h3>
+<%= form_for @tweet do |f| %>
+
+# 部位の名前
+  <div class="field">
+    <%= f.label :項目名 %>
+    <%= f.text_field :name, :size => 30 %>
+  </div>
+
+
+
+# メニュー
+  <div class="field">
+    <%= f.label :項目名  %>
+    <%= f.text_area :menue, :size => "30x2" %>
+  </div>
+#メニューの詳細
+  <div class="field">
+    <%= f.label :項目名  %>
+    <%= f.text_area :detail, :size => "30x2" %>
+  </div>
+
+
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", tweets_path %>

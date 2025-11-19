@@ -1,0 +1,40 @@
+<h1>投稿</h1>
+<h3>一覧ページ</h3>
+
+<h3>投稿を検索</h3>
+ <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+
+<%= link_to "新規投稿へ", new_tweet_path %>
+
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+
+    <div class="tweet">
+    <p><%= t.name %></p>
+      <p><%= t.menue %></p>
+      <p><%= t.detail %></p>
+      <!-- 投稿者情報 -->
+      <p><%= link_to t.user.name, user_path(t.user.id) %></p>
+      <p><%= t.user.email %></p>
+      <%= button_to "削除する", tweet_path(t.id), method: :delete %> 
+
+      <!-- 投稿内容 -->
+      <p><%= t.name %></p>
+      <p><%= t.menue %></p>
+      <p><%= t.detail %></p>
+
+      <!-- 画像がある場合のみ表示 -->
+      <% if t.user.image.attached? %>
+        <%= image_tag t.user.image, size: '250x200' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<!-- サインインしている場合のみマイページリンク表示 -->
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
