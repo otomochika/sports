@@ -3,9 +3,21 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
 
-  root to: 'blogs#index'
-  resources :blogs
+  authenticated :user do
+    root to: 'blogs#index', as: :authenticated_root
+  end
+
+  unauthenticated :user do
+    devise_scope :user do
+      root to: 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+
+  
    resources :tweets
+   delete 'tweets/:id' => 'tweets#destroy'
+  resources :blogs
+  delete 'blogs/:id' => 'blogs#destroy'
 
   
 

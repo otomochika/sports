@@ -1,17 +1,17 @@
 <%= form_with(model: @blog, local: true) do |form| %>
 
-  <div class="title">
-    <%= form.label :title %>
+  <div class="題名">
+    <%= form.label :題名 %>
     <%= form.text_field :title %>
   </div>
 
-    <div class="time">
-    <%= form.label :start_time %>
+    <div class="時間">
+    <%= form.label :開始時間 %>
     <%= form.datetime_select :start_time %>
   </div>
   
-  <div class="content">
-    <%= form.label :content %>
+  <div class="内容">
+    <%= form.label :内容 %>
     <%= form.text_field :content %>
   </div>
 

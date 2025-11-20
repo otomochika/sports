@@ -17,8 +17,82 @@
   *= require_tree .
   *= require_self
   */
-  body {
-    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
-      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-      
+  
+/* ベース設定 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* ヘッダー */
+header {
+  background: #1da1f2;
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ヘッダー右側のリンク */
+.header-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+
+.header-list a, .header-list button {
+  background: #fff;
+  color: #1da1f2;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.header-list a:hover,
+.header-list button:hover {
+  background: #e8f5fe;
+  opacity: 0.9;
+}
+
+/* メイン部分 */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ボタン共通 */
+button {
+  font-family: inherit;
+}
+
+/* スマホ表示 */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .header-list ul {
+    margin-top: 10px;
+    gap: 10px;
+  }
+}

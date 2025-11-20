@@ -1,0 +1,177 @@
+/* ------------------------------ */
+/* 基本デザイン（他ページと統一） */
+/* ------------------------------ */
+
+body {
+  font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+  background: #f6fefc;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+}
+
+/* タイトル */
+h1, h3 {
+  text-align: center;
+  color: #00b894;
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+/* お知らせメッセージ */
+#notice {
+  text-align: center;
+  color: #00b894;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* ------------------------------ */
+/* 上部一覧テーブル（統一デザイン） */
+/* ------------------------------ */
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 184, 148, 0.12);
+}
+
+table thead {
+  background: #00d1b2;
+  color: white;
+}
+
+table th, table td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+table tr:nth-child(even) {
+  background: #f4fffc;
+}
+
+table tr:hover {
+  background: #e8fff8;
+  transition: 0.2s;
+}
+
+table a {
+  color: #00b894;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+/* 削除ボタン */
+table form input[type="submit"] {
+  background: #e74c3c;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+table form input[type="submit"]:hover {
+  background: #c0392b;
+}
+
+/* ------------------------------ */
+/* カレンダー（simple-calendar） */
+/* ------------------------------ */
+
+.simple-calendar {
+  width: 90%;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 184, 148, 0.15);
+}
+
+/* 曜日ヘッダー */
+.simple-calendar th {
+  padding: 10px;
+  background: #00d1b2;
+  color: white;
+  font-weight: bold;
+}
+
+/* セル */
+.simple-calendar td {
+  height: 110px;
+  padding: 8px;
+  vertical-align: top;
+  border: 1px solid #e0f3ef;
+  background: #fcfffe;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+/* 今日の日付 */
+.simple-calendar .today {
+  background: #e4fff7 !important;
+  border: 2px solid #00b894 !important;
+  border-radius: 10px;
+}
+
+/* 月外の日付 */
+.simple-calendar .other-month {
+  color: #c8d6d2;
+}
+
+/* カレンダー内の投稿タイトル */
+.simple-calendar td div {
+  margin-top: 5px;
+  background: #00d1b2;
+  padding: 5px 6px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: white;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 209, 178, 0.25);
+}
+
+.simple-calendar td div:hover {
+  background: #00b894;
+  transform: translateY(-2px);
+}
+
+/* ------------------------------ */
+/* 下部リンク（統一デザイン） */
+/* ------------------------------ */
+
+a {
+  display: block;
+  text-align: center;
+  margin: 25px auto;
+  color: #00b894;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------ */
+/* スマホ対応 */
+/* ------------------------------ */
+
+@media (max-width: 600px) {
+  table, .simple-calendar {
+    width: 100%;
+  }
+
+  .simple-calendar td {
+    height: 85px;
+  }
+}
